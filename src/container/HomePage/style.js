@@ -60,5 +60,5 @@ export default {
     explain: {
         fontSize: 10,
         marginLeft: 70,
-    }
+    },
 }

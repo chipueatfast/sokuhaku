@@ -28,7 +28,7 @@ public class MainApplication extends Application implements ReactApplication {
           new MainReactPackage(),
             new SvgPackage(),
             new RNGestureHandlerPackage(),
-            new VectorIconsPackage(),
+            new VectorIconsPackage()
       );
     }
 

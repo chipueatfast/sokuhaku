@@ -3,10 +3,12 @@ import { View, Text, Image, ScrollView } from 'react-native';
 import { Checkbox } from 'react-native-material-ui';
 import Collapsible from 'react-native-collapsible';
 
+import Swiper from '../../component/Swiper';
 import CustomCheckbox from '../../component/CustomCheckBox';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
 import style from './style';
+import LandmarkCard from './splittedComponent/LandmarkCard';
 
 class HomePage extends React.Component {
     state = {
@@ -150,7 +152,7 @@ class HomePage extends React.Component {
                                             <CustomCheckbox
                                                     text="個室"
                                                     value={1}
-                                                    checked={this.state.formState.checkBoxes['option0']}
+                                                    checked={this.state.formState.checkBoxes['option1']}
                                                     checkHandler={this.updateCheckboxValue.bind(this, 1)}
                                             />
                                             <CustomCheckbox
@@ -172,7 +174,13 @@ class HomePage extends React.Component {
                         </View>
                     </View>
                 </Collapsible>
-
+                <View>
+                    <LandmarkCard
+                        place="一軒家貸切　Akureyri"
+                        detail="A beautiful villa in North Iceland"
+                        price="¥47,378 〜　/泊"
+                    />
+                </View>
             </ScrollView>
         )
     }
