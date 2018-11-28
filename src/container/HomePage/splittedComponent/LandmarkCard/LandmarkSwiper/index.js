@@ -11,7 +11,7 @@ export default function LandmarkSwiper(props) {
         <Swiper>
             {
                 slideData.map(s => (
-                    <View style={style.slide}>
+                    <View key={s.key} style={style.slide}>
                         <Image
                             style={style.imageSlide}
                             source={{uri: s.imgUrl}}

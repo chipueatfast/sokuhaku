@@ -4,11 +4,13 @@ import { Checkbox } from 'react-native-material-ui';
 import Collapsible from 'react-native-collapsible';
 
 import Swiper from '../../component/Swiper';
+import CustomMapView from '../../component/CustomMapView';
 import CustomCheckbox from '../../component/CustomCheckBox';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
 import style from './style';
 import LandmarkCard from './splittedComponent/LandmarkCard';
+
 
 class HomePage extends React.Component {
     state = {
@@ -174,6 +176,7 @@ class HomePage extends React.Component {
                         </View>
                     </View>
                 </Collapsible>
+                <CustomMapView />
                 <View>
                     <LandmarkCard
                         place="一軒家貸切　Akureyri"
