@@ -1,5 +1,3 @@
-import { StyleSheet } from 'react-native';
-
 export default {
     container: {
         flex: 1,
@@ -38,6 +36,8 @@ export default {
         justifyContent: 'space-around',
     },
     titleBlock: {
+        marginTop: 25,
+        marginBottom: 8,
         paddingLeft: 15,
         fontSize: 15,
     },
@@ -61,4 +61,4 @@ export default {
         fontSize: 10,
         marginLeft: 70,
     },
-}
+};

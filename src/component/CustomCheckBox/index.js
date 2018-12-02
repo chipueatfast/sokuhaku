@@ -22,6 +22,6 @@ export function CustomCheckBox(props) {
 
 CustomCheckBox.defaultProps = {
     subtext: '',
-}
+};
 
 export default CustomCheckBox;

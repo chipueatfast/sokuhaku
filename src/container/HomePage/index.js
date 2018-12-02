@@ -1,11 +1,9 @@
 import React from 'react';
-import { View, Text, Image, ScrollView } from 'react-native';
-import { Checkbox } from 'react-native-material-ui';
+import { View, Text, ScrollView } from 'react-native';
 import Collapsible from 'react-native-collapsible';
-
-import Swiper from '../../component/Swiper';
 import CustomMapView from '../../component/CustomMapView';
 import CustomCheckbox from '../../component/CustomCheckBox';
+import NumberPicker from '../../component/NumberPicker';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
 import style from './style';
@@ -20,6 +18,7 @@ class HomePage extends React.Component {
             checkBoxes: {},
         }
     }
+
     resetForm = () => {
         this.setState({
             formState: {
@@ -27,12 +26,13 @@ class HomePage extends React.Component {
             }
         })
     }
+
     updateCheckboxValue = (value) => {
         const previousOptionState = this.state.formState.checkBoxes;
-        const currentOptionState = this.state.formState.checkBoxes[`option${value}`]
+        const currentOptionState = this.state.formState.checkBoxes[`option${value}`];
         this.setState({
             formState: {
-                checkBoxes: { ...previousOptionState, [`option${value}`]: !currentOptionState},
+                checkBoxes: {...previousOptionState, [`option${value}`]: !currentOptionState},
             }
         })
         console.log(this.state);
@@ -92,8 +92,8 @@ class HomePage extends React.Component {
                                     backgroundColor: "#ec4951",
                                     color: "white",
                                 }}
-                                pressHandler={this.toggleHandler.bind(this, 0)}             
-                                isActive={querying === 'airBnb'}       
+                                pressHandler={this.toggleHandler.bind(this, 0)}
+                                isActive={querying === 'airBnb'}
                             />
                             <ToggleButton
                                 style={{
@@ -106,13 +106,28 @@ class HomePage extends React.Component {
                                     color: "white",
                                 }}
                                 pressHandler={this.toggleHandler.bind(this, 1)}
-                                isActive={querying === 'stayJapan'}       
+                                isActive={querying === 'stayJapan'}
                             />
                         </View>
                         <View style={style.criteria}>
                             {
                                 querying === "airBnb" ? (
                                     <React.Fragment>
+                                        <Text style={style.titleBlock}>
+                                            ゲスト人数
+                                        </Text>
+                                        <NumberPicker
+                                            initialNumber = {1}
+                                            title="大人"
+                                        />
+                                        <NumberPicker
+                                            subtitle="年齢2-12"
+                                            title="子ども"
+                                        />
+                                        <NumberPicker
+                                            title="乳幼児"
+                                            subtitle="2歳未満"
+                                        />
                                         <Text style={style.titleBlock}>
                                             住宅タイプ
                                         </Text>
@@ -139,6 +154,18 @@ class HomePage extends React.Component {
                                                 checkHandler={this.updateCheckboxValue.bind(this, 2)}
                                             />
                                         </View>
+                                        <Text style={style.titleBlock}>
+                                            こだわり条件
+                                        </Text>
+                                        <NumberPicker
+                                            title="ベッド"
+                                        />
+                                        <NumberPicker
+                                            title="寝室"
+                                        />
+                                        <NumberPicker
+                                            title="バスルーム"
+                                        />
                                     </React.Fragment>) : (
                                     <React.Fragment>
                                         <Text style={style.titleBlock}>
@@ -172,7 +199,7 @@ class HomePage extends React.Component {
                                         </View>
                                     </React.Fragment>
                                     )
-                            } 
+                            }
                         </View>
                     </View>
                 </Collapsible>

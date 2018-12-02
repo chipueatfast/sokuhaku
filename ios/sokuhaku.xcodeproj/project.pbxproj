@@ -70,6 +70,7 @@
 		99FE636F403A49AEB8251E42 /* libRNSVG.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DAC4DF3E12FB4E249781D527 /* libRNSVG.a */; };
 		F3170B1EA2A84FA9B8F09344 /* libRNSVG-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 18EFA79FBCF94A2293EBB1A8 /* libRNSVG-tvOS.a */; };
 		09D404B07B4E4EC8AEC47505 /* libAirMaps.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA86D72A37264963929F4390 /* libAirMaps.a */; };
+		8026B028291C4152BC8D6076 /* fontawesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE28D5C95DB44684BC7C931B /* fontawesome.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -412,6 +413,7 @@
 		18EFA79FBCF94A2293EBB1A8 /* libRNSVG-tvOS.a */ = {isa = PBXFileReference; name = "libRNSVG-tvOS.a"; path = "libRNSVG-tvOS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		1A6503EC333F4A318553434D /* AirMaps.xcodeproj */ = {isa = PBXFileReference; name = "AirMaps.xcodeproj"; path = "../node_modules/react-native-maps/lib/ios/AirMaps.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		EA86D72A37264963929F4390 /* libAirMaps.a */ = {isa = PBXFileReference; name = "libAirMaps.a"; path = "libAirMaps.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		AE28D5C95DB44684BC7C931B /* fontawesome.ttf */ = {isa = PBXFileReference; name = "fontawesome.ttf"; path = "../assets/fonts/fontawesome.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -713,6 +715,7 @@
 				61E553EC6AEE4FD79359A714 /* Roboto-Regular.ttf */,
 				C6CCC4BBA0934D6D9E96DCDF /* Roboto-Thin.ttf */,
 				9E8CC27D8FFA4E5795DDF04D /* Roboto-ThinItalic.ttf */,
+				AE28D5C95DB44684BC7C931B /* fontawesome.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1191,6 +1194,7 @@
 				3F14F3C6D6DC42F0A81BF1F9 /* Roboto-Regular.ttf in Resources */,
 				5B01BE0EA4BD48558989C6E5 /* Roboto-Thin.ttf in Resources */,
 				4BE7F1A3F706473E9238D76C /* Roboto-ThinItalic.ttf in Resources */,
+				8026B028291C4152BC8D6076 /* fontawesome.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
