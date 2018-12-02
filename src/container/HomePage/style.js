@@ -49,7 +49,6 @@ export default {
     checkboxArea: {
         justifyContent: 'flex-start',
         width: "70%",
-        height: 300,
     },
     checkBox: {
         paddingTop: 5,

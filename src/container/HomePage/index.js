@@ -2,12 +2,12 @@ import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import CustomMapView from '../../component/CustomMapView';
-import CustomCheckbox from '../../component/CustomCheckBox';
-import NumberPicker from '../../component/NumberPicker';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
 import style from './style';
 import LandmarkCard from './splittedComponent/LandmarkCard';
+import AirBnbForm from './splittedComponent/Forms/AirBnbForm';
+import StayJapanForm from "./splittedComponent/Forms/StayJapanForm";
 
 
 class HomePage extends React.Component {
@@ -19,30 +19,12 @@ class HomePage extends React.Component {
         }
     };
 
-    resetForm = () => {
-        this.setState({
-            formState: {
-                checkBoxes: {},
-            }
-        })
-    };
-
-    updateCheckboxValue = (value) => {
-        const previousOptionState = this.state.formState.checkBoxes;
-        const currentOptionState = this.state.formState.checkBoxes[`option${value}`];
-        this.setState({
-            formState: {
-                checkBoxes: {...previousOptionState, [`option${value}`]: !currentOptionState},
-            }
-        });
-        console.log(this.state);
-    };
     toggleHandler = (value) => {
-        this.resetForm();
         this.setState({
             querying: value ? 'stayJapan' : 'airBnb',
         })
     };
+
     render() {
         const { isFormCollapsed } = this.state;
         const { querying } = this.state;
@@ -111,94 +93,9 @@ class HomePage extends React.Component {
                         </View>
                         <View style={style.criteria}>
                             {
-                                querying === "airBnb" ? (
-                                    <React.Fragment>
-                                        <Text style={style.titleBlock}>
-                                            ゲスト人数
-                                        </Text>
-                                        <NumberPicker
-                                            initialNumber = {1}
-                                            title="大人"
-                                        />
-                                        <NumberPicker
-                                            subtitle="年齢2-12"
-                                            title="子ども"
-                                        />
-                                        <NumberPicker
-                                            title="乳幼児"
-                                            subtitle="2歳未満"
-                                        />
-                                        <Text style={style.titleBlock}>
-                                            住宅タイプ
-                                        </Text>
-                                        <View style={style.checkboxArea}>
-                                            <CustomCheckbox
-                                                text="まるまる貸し切り"
-                                                subtext="まるまる独り占めできる住まい"
-                                                value={0}
-                                                checked={this.state.formState.checkBoxes['option0']}
-                                                checkHandler={this.updateCheckboxValue.bind(this, 0)}
-                                            />
-                                            <CustomCheckbox
-                                                text="個室"
-                                                subtext="自分専用の個室＋共用スペース"
-                                                value={1}
-                                                checked={this.state.formState.checkBoxes['option1']}
-                                                checkHandler={this.updateCheckboxValue.bind(this, 1)}
-                                            />
-                                            <CustomCheckbox
-                                                text="シェアルーム"
-                                                subtext="相部屋などのシェアルーム"
-                                                value={2}
-                                                checked={this.state.formState.checkBoxes['option2']}
-                                                checkHandler={this.updateCheckboxValue.bind(this, 2)}
-                                            />
-                                        </View>
-                                        <Text style={style.titleBlock}>
-                                            こだわり条件
-                                        </Text>
-                                        <NumberPicker
-                                            title="ベッド"
-                                        />
-                                        <NumberPicker
-                                            title="寝室"
-                                        />
-                                        <NumberPicker
-                                            title="バスルーム"
-                                        />
-                                    </React.Fragment>) : (
-                                    <React.Fragment>
-                                        <Text style={style.titleBlock}>
-                                            住宅タイプ
-                                        </Text>
-                                        <View style={style.checkboxArea}>
-                                            <CustomCheckbox
-                                                    text="まるまる貸し切り"
-                                                    value={0}
-                                                    checked={this.state.formState.checkBoxes['option0']}
-                                                    checkHandler={this.updateCheckboxValue.bind(this, 0)}
-                                            />
-                                            <CustomCheckbox
-                                                    text="個室"
-                                                    value={1}
-                                                    checked={this.state.formState.checkBoxes['option1']}
-                                                    checkHandler={this.updateCheckboxValue.bind(this, 1)}
-                                            />
-                                            <CustomCheckbox
-                                                    text="個室"
-                                                    value={2}
-                                                    checked={this.state.formState.checkBoxes['option2']}
-                                                    checkHandler={this.updateCheckboxValue.bind(this, 2)}
-                                            />
-                                            <CustomCheckbox
-                                                    text="その他"
-                                                    value={3}
-                                                    checked={this.state.formState.checkBoxes['option3']}
-                                                    checkHandler={this.updateCheckboxValue.bind(this, 3)}
-                                            />
-                                        </View>
-                                    </React.Fragment>
-                                    )
+                                querying === "airBnb" ?
+                                    (<AirBnbForm/>) :
+                                    (<StayJapanForm/>)
                             }
                         </View>
                     </View>
