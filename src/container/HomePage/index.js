@@ -17,7 +17,7 @@ class HomePage extends React.Component {
         formState: {
             checkBoxes: {},
         }
-    }
+    };
 
     resetForm = () => {
         this.setState({
@@ -25,7 +25,7 @@ class HomePage extends React.Component {
                 checkBoxes: {},
             }
         })
-    }
+    };
 
     updateCheckboxValue = (value) => {
         const previousOptionState = this.state.formState.checkBoxes;
@@ -34,15 +34,15 @@ class HomePage extends React.Component {
             formState: {
                 checkBoxes: {...previousOptionState, [`option${value}`]: !currentOptionState},
             }
-        })
+        });
         console.log(this.state);
-    }
+    };
     toggleHandler = (value) => {
         this.resetForm();
         this.setState({
             querying: value ? 'stayJapan' : 'airBnb',
         })
-    }
+    };
     render() {
         const { isFormCollapsed } = this.state;
         const { querying } = this.state;
