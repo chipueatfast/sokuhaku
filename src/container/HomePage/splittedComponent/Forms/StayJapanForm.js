@@ -3,6 +3,8 @@ import {Text, View} from "react-native";
 import style from "../../style";
 import CustomCheckbox from "../../../../component/CustomCheckBox";
 import { updateCheckboxValue} from "./service";
+import NumberPicker from "../../../../component/NumberPicker";
+import PriceRangeInput from "../../../../component/PriceRangeInput";
 
 class StayJapanForm extends React.Component {
     state ={
@@ -13,6 +15,12 @@ class StayJapanForm extends React.Component {
     render() {
         return (
             <React.Fragment>
+                <Text style={style.titleBlock}>
+                    ゲスト人数
+                </Text>
+                <NumberPicker
+                    title="大人"
+                />
                 <Text style={style.titleBlock}>
                     住宅タイプ
                 </Text>
@@ -42,6 +50,14 @@ class StayJapanForm extends React.Component {
                         checkHandler={updateCheckboxValue.bind(this, 3)}
                     />
                 </View>
+                <Text style={style.titleBlock}>
+                    一泊
+                </Text>
+                <PriceRangeInput
+                    minPrice="1000"
+                    maxPrice="10000"
+                    subtitle="平均相場は1泊あたり約¥8,000です"
+                />
             </React.Fragment>
         )
     }

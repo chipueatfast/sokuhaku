@@ -43,7 +43,6 @@ export default {
     },
     criteria: {
         justifyContent: 'flex-start',
-        height: 715,
         width: "100%",
     },
     checkboxArea: {
@@ -60,4 +59,7 @@ export default {
         fontSize: 10,
         marginLeft: 70,
     },
+    footer: {
+        height: 30,
+    }
 };
