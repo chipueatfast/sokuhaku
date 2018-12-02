@@ -99,6 +99,7 @@ class HomePage extends React.Component {
                                     (<StayJapanForm/>)
                             }
                         </View>
+                        <View style={style.footer} />
                     </View>
                 </Collapsible>
                 <SearchInput
