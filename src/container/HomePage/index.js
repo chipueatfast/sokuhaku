@@ -5,7 +5,7 @@ import CustomMapView from '../../component/CustomMapView';
 import SearchInput from '../../component/SearchInput';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
-import style from './style';
+import style, {HeartButton} from './style';
 import LandmarkCard from './splittedComponent/LandmarkCard';
 import AirBnbForm from './splittedComponent/Forms/AirBnbForm';
 import StayJapanForm from "./splittedComponent/Forms/StayJapanForm";
