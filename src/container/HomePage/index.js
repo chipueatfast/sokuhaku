@@ -9,6 +9,7 @@ import style from './style';
 import LandmarkCard from './splittedComponent/LandmarkCard';
 import AirBnbForm from './splittedComponent/Forms/AirBnbForm';
 import StayJapanForm from "./splittedComponent/Forms/StayJapanForm";
+import { data } from './MockData';
 
 
 class HomePage extends React.Component {
@@ -128,11 +129,16 @@ class HomePage extends React.Component {
 
                 <CustomMapView />
                 <View>
-                    <LandmarkCard
-                        place="一軒家貸切　Akureyri"
-                        detail="A beautiful villa in North Iceland"
-                        price="¥47,378 〜　/泊"
-                    />
+                    {
+                        // this is not standard
+                        data.map((el, index) =>
+                        <LandmarkCard
+                            slides={el.slides}
+                            place={el.place}
+                            detail={el.detail}
+                            price={el.price}
+                        />)
+                    }
                 </View>
             </ScrollView>
         )
