@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, ScrollView } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import CustomMapView from '../../component/CustomMapView';
+import SearchInput from '../../component/SearchInput';
 import Logo from '../../component/Logo';
 import ToggleButton from '../../component/ToggleButton';
 import style from './style';
@@ -100,6 +101,30 @@ class HomePage extends React.Component {
                         </View>
                     </View>
                 </Collapsible>
+                <SearchInput
+                    placeholder = "東京"
+                />
+                {/*this is not standard*/}
+                <View style={{
+                    justifyContent: "center",
+                    alignItems: "stretch",
+                }}>
+                    <ToggleButton
+                        text="検索"
+                        style ={{
+                            marginBottom: 15,
+                            marginLeft: 15,
+                            marginRight: 15,
+                            elevation: 3,
+                        }}
+                        activeColor={{
+                            backgroundColor: "#ec4953",
+                            color: "white",
+                        }}
+                        isActive={true}
+                    />
+                </View>
+
                 <CustomMapView />
                 <View>
                     <LandmarkCard

@@ -21,8 +21,8 @@ export default function CustomMapView(props) {
                     ...StyleSheet.absoluteFillObject,
                 }}
                 initialRegion={{
-                    latitude: 37.78825,
-                    longitude: -122.4324,
+                    latitude: 36.2048,
+                    longitude: 138.2529,
                     latitudeDelta: 0.0922,
                     longitudeDelta: 0.0421,
                 }}

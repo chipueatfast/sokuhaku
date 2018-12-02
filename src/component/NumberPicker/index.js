@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, TouchableOpacity } from 'react-native';
-import { IconTypes } from 'react-native-fontawesome';
+import { View, TouchableOpacity } from 'react-native';
 import { NumberPickerContainer, BorderedButton, Title, Number, Explanation, Subtitle } from './style';
 import { Icon } from 'react-native-elements';
 
