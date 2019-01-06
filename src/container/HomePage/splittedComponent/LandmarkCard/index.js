@@ -36,16 +36,17 @@ export default class LandmarkCard extends React.Component {
                         {
                             this.state.liked  ?
                                 (<Icon
-                                    color={this.state.liked ? "#ec4953" : "white"}
+                                    color="#ec4953"
                                     name="heart"
-                                    size={30}
-                                    type={this.state.liked ? "font-awesome" : "evilicon"}
+                                    type="font-awesome"
+                                    size={20}
                                 />) : (
                                     <Icon
-                                        color={this.state.liked ? "#ec4953" : "white"}
+                                        color="white"
                                         name="heart"
-                                        size={35}
-                                        type={this.state.liked ? "font-awesome" : "evilicon"}
+                                        size={25}
+                                        type="evilicon"
+
                                     />
                                 )
                         }

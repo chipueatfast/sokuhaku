@@ -3,11 +3,23 @@ import styled from 'styled-components';
 
 export const HeartButton = styled.TouchableOpacity`
   position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  align-items: center;
   top: 10px;
   right: 10px;
   z-index: 9999999;
 `;
+
 export default StyleSheet.create({
+    heartContainer: {
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: 'blue',
+    },
     swiperArea: {
         height: 250,
         margin: 2,

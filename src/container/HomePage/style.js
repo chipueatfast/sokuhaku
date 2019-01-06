@@ -1,4 +1,15 @@
 export default {
+    bannerBackground: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+    },
+    overlayBackground: {
+        position: 'absolute',
+        width: '100%',
+        height: '100%',
+        resizeMode: 'repeat',
+    },
     container: {
         flex: 1,
         background: 'red',

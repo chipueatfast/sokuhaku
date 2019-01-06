@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ScrollView } from 'react-native';
+import { View, Text, ScrollView, Image } from 'react-native';
 import Collapsible from 'react-native-collapsible';
 import CustomMapView from '../../component/CustomMapView';
 import SearchInput from '../../component/SearchInput';
@@ -33,6 +33,14 @@ class HomePage extends React.Component {
         return (
             <ScrollView style={style.container}>
                 <View style={style.heroBanner}>
+                    <Image
+                        style={style.bannerBackground}
+                        source={require('./img/backgroundBanner.jpg')}
+                    />
+                    <Image
+                        style={style.overlayBackground}
+                        source={require('./img/backgroundOverlay.png')}
+                    />
                     <View style={style.midContent}>
                         <Text style={style.subTitle}>
                             今すぐここで泊まれる民泊を探せる
