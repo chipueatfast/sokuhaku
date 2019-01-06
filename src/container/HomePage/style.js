@@ -1,4 +1,10 @@
+import {Dimensions} from 'react-native';
+
 export default {
+    main: {
+        height: '100%',
+        display: 'flex',
+    },
     bannerBackground: {
         position: 'absolute',
         width: '100%',
@@ -9,6 +15,16 @@ export default {
         width: '100%',
         height: '100%',
         resizeMode: 'repeat',
+    },
+    actionButtonIcon: {
+        fontSize: 20,
+        height: 22,
+        color: 'white',
+    },
+    float: {
+        height: 1000,
+        position: 'absolute',
+        zIndex: 9999,
     },
     container: {
         flex: 1,

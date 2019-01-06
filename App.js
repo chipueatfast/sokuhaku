@@ -7,8 +7,9 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import { createStackNavigator, createAppContainer } from 'react-navigation'
+import { StyleSheet, Button, View} from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import Menu from './src/shared-component/Menu';
 import HomePage from './src/container/HomePage';
 
 const Router = createStackNavigator({
@@ -16,7 +17,7 @@ const Router = createStackNavigator({
 }, {
   initialRouteName: "Home",
   headerMode: "none",
-})
+});
 
 const AppNavigator = createAppContainer(Router);
 
@@ -24,7 +25,10 @@ type Props = {};
 export default class App extends Component<Props> {
   render() {
     return (
-        <AppNavigator style={styles.app}/>
+        <View style={{flex: 1}}>
+            <AppNavigator style={styles.app}/>
+            <Menu/>
+        </View>
     );
   }
 }
@@ -33,5 +37,5 @@ export default class App extends Component<Props> {
 const styles = StyleSheet.create({
   app: {
     fontFamily: 'Roboto',
-  }
+  },
 });
