@@ -7,13 +7,18 @@
  */
 
 import React, {Component} from 'react';
-import { StyleSheet, Button, View} from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Menu from './src/shared-component/Menu';
 import HomePage from './src/container/HomePage';
+import SignInPage from './src/container/SignInPage';
+import SignUpPage from './src/container/SignUpPage';
+import NavigationService from './src/service/NavigationService';
 
 const Router = createStackNavigator({
-  Home: HomePage,
+    Home: HomePage,
+    SignIn: SignInPage,
+    SignUp: SignUpPage,
 }, {
   initialRouteName: "Home",
   headerMode: "none",
@@ -23,14 +28,25 @@ const AppNavigator = createAppContainer(Router);
 
 type Props = {};
 export default class App extends Component<Props> {
-  render() {
-    return (
-        <View style={{flex: 1}}>
-            <AppNavigator style={styles.app}/>
-            <Menu/>
-        </View>
-    );
-  }
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            modalVisible: false,
+        };
+    }
+
+    render() {
+        return (
+            <View style={{flex: 1}}>
+                <AppNavigator
+                    ref={navigator => NavigationService.setTopLevelNavigator(navigator)}
+                    style={styles.app}
+                />
+                <Menu/>
+            </View>
+        );
+      }
 }
 
 

@@ -3,6 +3,8 @@ import ActionButton from "react-native-action-button";
 import Icon from "react-native-vector-icons/Ionicons";
 import {StyleSheet} from "react-native";
 
+import NavigationService from '../service/NavigationService';
+
 export default class Menu extends React.Component {
     constructor(props) {
         super(props);
@@ -11,11 +13,21 @@ export default class Menu extends React.Component {
         return (
 
                 <ActionButton
+                    style={{
+                        border: '1px solid black',
+                    }}
                     degrees={0}
                     useNativeFeedback={false}
                     activeOpacity={1}
                     verticalOrientation='down'
                     buttonColor="white"
+                    fixNativeFeedbackRadius
+                    hideShadow={false}
+                    shadowStyle={{
+                        shadowOffset:{  width: 10,  height: 10,  },
+                        shadowColor: 'black',
+                        shadowOpacity: 1.0,
+                    }}
                     renderIcon={(active) => !active ?
                         (<Icon
                             style={styles.actionButtonIcon}
@@ -29,12 +41,25 @@ export default class Menu extends React.Component {
                 >
                     <ActionButton.Item
                         textStyle={{
+                            width: 40,
+                        }}
+                        useNativeFeedback={false}
+                        buttonColor='white'
+                        title="ホーム"
+                        onPress={() => {
+                            NavigationService.navigate('Home')
+                        }}
+                    >
+                        <Icon name="md-home" style={styles.actionButtonIcon} />
+                    </ActionButton.Item>
+                    <ActionButton.Item
+                        textStyle={{
                             width: 70,
                         }}
                         useNativeFeedback={false}
                         buttonColor='white'
                         title="サインアップ"
-                        onPress={() => {}}
+                        onPress={() => {{NavigationService.navigate('SignUp')}}}
                     >
                         <Icon name="md-person-add" style={styles.actionButtonIcon} />
                     </ActionButton.Item>
@@ -44,7 +69,7 @@ export default class Menu extends React.Component {
                         }}
                         buttonColor='white'
                         title="ログイン"
-                        onPress={() => {}}
+                        onPress={() => {NavigationService.navigate('SignIn')}}
                         useNativeFeedback={false}
                     >
                         <Icon name="md-log-in" style={styles.actionButtonIcon} />
@@ -60,4 +85,9 @@ const styles = StyleSheet.create({
         height: 22,
         color: 'black',
     },
+    mainActionButtonIcon: {
+        shadowOffset:{  width: 10,  height: 10 },
+        shadowColor: 'black',
+        shadowOpacity: 1.0,
+    }
 });
