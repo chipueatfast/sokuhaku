@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 import CustomCard from '../../../../component/CustomCard';
 import style, {HeartButton} from './style';
 import LandmarkSwiper from './LandmarkSwiper';
@@ -62,7 +62,12 @@ export default class LandmarkCard extends React.Component {
                         })}
                     />
                 </View>
-                <View style={style.description}>
+                <TouchableOpacity
+                    onPress={() => {
+                        this.props.pressHandler();
+                    }}
+                    style={style.description}
+                >
                     <Text style={style.placeText}>
                         {place}
                     </Text>
@@ -72,7 +77,7 @@ export default class LandmarkCard extends React.Component {
                     <Text style={style.priceText}>
                         {price}
                     </Text>
-                </View>
+                </TouchableOpacity>
             </CustomCard>
         )
     }

@@ -13,14 +13,16 @@ import Menu from './src/shared-component/Menu';
 import HomePage from './src/container/HomePage';
 import SignInPage from './src/container/SignInPage';
 import SignUpPage from './src/container/SignUpPage';
+import DetailPage from './src/container/DetailPage';
 import NavigationService from './src/service/NavigationService';
 
 const Router = createStackNavigator({
     Home: HomePage,
     SignIn: SignInPage,
     SignUp: SignUpPage,
+    Detail: DetailPage,
 }, {
-  initialRouteName: "Home",
+  initialRouteName: "Detail",
   headerMode: "none",
 });
 

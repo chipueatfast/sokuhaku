@@ -78,6 +78,7 @@ class HomePage extends React.Component {
                                     style={{
                                         flex: 1,
                                         margin: 10,
+                                        elevation: 3,
                                     }}
                                     text="AirBnB"
                                     activeColor= {{
@@ -91,6 +92,7 @@ class HomePage extends React.Component {
                                     style={{
                                         flex: 1,
                                         margin: 10,
+                                        elevation: 3,
                                     }}
                                     text="StayJapan"
                                     activeColor= {{
@@ -141,6 +143,9 @@ class HomePage extends React.Component {
                             // this is not standard
                             data.map((el, index) =>
                                 <LandmarkCard
+                                    pressHandler={() => {
+                                        this.props.navigation.navigate('Detail');
+                                    }}
                                     key={index}
                                     slides={el.slides}
                                     place={el.place}
