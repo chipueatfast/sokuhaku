@@ -28,6 +28,8 @@ const Router = createStackNavigator({
 
 const AppNavigator = createAppContainer(Router);
 
+// deploy
+
 type Props = {};
 export default class App extends Component<Props> {
 
